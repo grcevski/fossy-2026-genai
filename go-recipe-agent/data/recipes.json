@@ -1,0 +1,243 @@
+[
+  {
+    "name": "Chickpea Tomato Curry",
+    "cuisine": "Indian-inspired",
+    "diets": ["vegan", "vegetarian", "gluten-free"],
+    "time_minutes": 35,
+    "servings": 4,
+    "ingredients": [
+      {"name": "chickpeas", "quantity": 480, "unit": "g"},
+      {"name": "crushed tomatoes", "quantity": 400, "unit": "g"},
+      {"name": "onion", "quantity": 1, "unit": "item"},
+      {"name": "coconut milk", "quantity": 250, "unit": "mL"},
+      {"name": "curry powder", "quantity": 15, "unit": "mL"}
+    ],
+    "steps": ["Soften the chopped onion.", "Toast the curry powder for one minute.", "Add tomatoes, chickpeas, and coconut milk; simmer for 20 minutes."],
+    "tags": ["one-pot", "weeknight", "comforting"]
+  },
+  {
+    "name": "Lentil Vegetable Soup",
+    "cuisine": "Mediterranean",
+    "diets": ["vegan", "vegetarian", "gluten-free"],
+    "time_minutes": 50,
+    "servings": 6,
+    "ingredients": [
+      {"name": "brown lentils", "quantity": 300, "unit": "g"},
+      {"name": "carrots", "quantity": 250, "unit": "g"},
+      {"name": "celery", "quantity": 150, "unit": "g"},
+      {"name": "crushed tomatoes", "quantity": 400, "unit": "g"},
+      {"name": "vegetable stock", "quantity": 1500, "unit": "mL"}
+    ],
+    "steps": ["Soften the chopped vegetables.", "Add lentils, tomatoes, and stock.", "Simmer until the lentils are tender, about 35 minutes."],
+    "tags": ["soup", "batch-cooking", "high-fibre"]
+  },
+  {
+    "name": "Spaghetti Aglio e Olio",
+    "cuisine": "Italian",
+    "diets": ["vegan", "vegetarian"],
+    "time_minutes": 20,
+    "servings": 4,
+    "ingredients": [
+      {"name": "spaghetti", "quantity": 400, "unit": "g"},
+      {"name": "garlic", "quantity": 20, "unit": "g"},
+      {"name": "olive oil", "quantity": 80, "unit": "mL"},
+      {"name": "chilli flakes", "quantity": 5, "unit": "mL"},
+      {"name": "parsley", "quantity": 20, "unit": "g"}
+    ],
+    "steps": ["Cook the pasta until al dente, reserving pasta water.", "Gently warm garlic and chilli in olive oil.", "Toss pasta with the oil, parsley, and enough pasta water to emulsify."],
+    "tags": ["quick", "pantry", "pasta"]
+  },
+  {
+    "name": "Tomato Basil Pasta",
+    "cuisine": "Italian",
+    "diets": ["vegetarian"],
+    "time_minutes": 30,
+    "servings": 4,
+    "ingredients": [
+      {"name": "penne", "quantity": 400, "unit": "g"},
+      {"name": "crushed tomatoes", "quantity": 500, "unit": "g"},
+      {"name": "garlic", "quantity": 15, "unit": "g"},
+      {"name": "fresh basil", "quantity": 25, "unit": "g"},
+      {"name": "parmesan", "quantity": 60, "unit": "g"}
+    ],
+    "steps": ["Cook the pasta.", "Simmer tomatoes with garlic for 15 minutes.", "Toss with pasta and basil; finish with parmesan."],
+    "tags": ["weeknight", "pasta", "family"]
+  },
+  {
+    "name": "Tofu Broccoli Stir-Fry",
+    "cuisine": "Chinese-inspired",
+    "diets": ["vegan", "vegetarian"],
+    "time_minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {"name": "firm tofu", "quantity": 450, "unit": "g"},
+      {"name": "broccoli", "quantity": 400, "unit": "g"},
+      {"name": "soy sauce", "quantity": 60, "unit": "mL"},
+      {"name": "fresh ginger", "quantity": 15, "unit": "g"},
+      {"name": "sesame oil", "quantity": 15, "unit": "mL"}
+    ],
+    "steps": ["Brown the cubed tofu.", "Stir-fry broccoli and ginger until crisp-tender.", "Return tofu, add soy sauce and sesame oil, and toss."],
+    "tags": ["quick", "stir-fry", "high-protein"]
+  },
+  {
+    "name": "Black Bean Tacos",
+    "cuisine": "Mexican-inspired",
+    "diets": ["vegetarian", "gluten-free"],
+    "time_minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {"name": "black beans", "quantity": 480, "unit": "g"},
+      {"name": "corn tortillas", "quantity": 12, "unit": "item"},
+      {"name": "corn kernels", "quantity": 200, "unit": "g"},
+      {"name": "lime", "quantity": 2, "unit": "item"},
+      {"name": "feta", "quantity": 100, "unit": "g"}
+    ],
+    "steps": ["Warm the beans with corn and seasoning.", "Heat the tortillas.", "Fill tortillas and finish with lime and crumbled feta."],
+    "tags": ["quick", "tacos", "family"]
+  },
+  {
+    "name": "Shakshuka",
+    "cuisine": "North African",
+    "diets": ["vegetarian", "gluten-free"],
+    "time_minutes": 35,
+    "servings": 4,
+    "ingredients": [
+      {"name": "eggs", "quantity": 6, "unit": "item"},
+      {"name": "crushed tomatoes", "quantity": 600, "unit": "g"},
+      {"name": "red pepper", "quantity": 1, "unit": "item"},
+      {"name": "onion", "quantity": 1, "unit": "item"},
+      {"name": "ground cumin", "quantity": 10, "unit": "mL"}
+    ],
+    "steps": ["Soften onion and pepper with cumin.", "Add tomatoes and simmer until thickened.", "Make wells, add eggs, cover, and cook until set to preference."],
+    "tags": ["breakfast", "one-pan", "brunch"]
+  },
+  {
+    "name": "Mushroom Barley Risotto",
+    "cuisine": "Italian-inspired",
+    "diets": ["vegetarian"],
+    "time_minutes": 55,
+    "servings": 4,
+    "ingredients": [
+      {"name": "pearl barley", "quantity": 300, "unit": "g"},
+      {"name": "mushrooms", "quantity": 450, "unit": "g"},
+      {"name": "vegetable stock", "quantity": 1200, "unit": "mL"},
+      {"name": "onion", "quantity": 1, "unit": "item"},
+      {"name": "parmesan", "quantity": 70, "unit": "g"}
+    ],
+    "steps": ["Brown the mushrooms and set aside.", "Soften onion, add barley, then gradually add warm stock.", "Cook until tender and finish with mushrooms and parmesan."],
+    "tags": ["comforting", "whole-grain", "weekend"]
+  },
+  {
+    "name": "Red Lentil Dal",
+    "cuisine": "Indian",
+    "diets": ["vegan", "vegetarian", "gluten-free"],
+    "time_minutes": 40,
+    "servings": 6,
+    "ingredients": [
+      {"name": "red lentils", "quantity": 350, "unit": "g"},
+      {"name": "onion", "quantity": 1, "unit": "item"},
+      {"name": "crushed tomatoes", "quantity": 300, "unit": "g"},
+      {"name": "coconut milk", "quantity": 400, "unit": "mL"},
+      {"name": "garam masala", "quantity": 15, "unit": "mL"}
+    ],
+    "steps": ["Soften onion with garam masala.", "Add lentils, tomatoes, coconut milk, and water.", "Simmer until creamy, stirring occasionally."],
+    "tags": ["one-pot", "batch-cooking", "comforting"]
+  },
+  {
+    "name": "Greek Chickpea Salad",
+    "cuisine": "Greek",
+    "diets": ["vegetarian", "gluten-free"],
+    "time_minutes": 15,
+    "servings": 4,
+    "ingredients": [
+      {"name": "chickpeas", "quantity": 480, "unit": "g"},
+      {"name": "cucumber", "quantity": 250, "unit": "g"},
+      {"name": "tomatoes", "quantity": 300, "unit": "g"},
+      {"name": "feta", "quantity": 120, "unit": "g"},
+      {"name": "lemon juice", "quantity": 45, "unit": "mL"}
+    ],
+    "steps": ["Chop the vegetables.", "Combine with chickpeas and feta.", "Dress with lemon juice, olive oil, and oregano."],
+    "tags": ["no-cook", "quick", "lunch"]
+  },
+  {
+    "name": "Vegetable Fried Rice",
+    "cuisine": "Chinese-inspired",
+    "diets": ["vegetarian", "gluten-free"],
+    "time_minutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {"name": "cooked rice", "quantity": 700, "unit": "g"},
+      {"name": "mixed vegetables", "quantity": 350, "unit": "g"},
+      {"name": "eggs", "quantity": 3, "unit": "item"},
+      {"name": "tamari", "quantity": 45, "unit": "mL"},
+      {"name": "sesame oil", "quantity": 10, "unit": "mL"}
+    ],
+    "steps": ["Scramble the eggs and set aside.", "Stir-fry vegetables, then add cold rice.", "Add tamari, sesame oil, and eggs; toss until hot."],
+    "tags": ["quick", "leftovers", "one-pan"]
+  },
+  {
+    "name": "Overnight Oats",
+    "cuisine": "International",
+    "diets": ["vegan", "vegetarian", "gluten-free"],
+    "time_minutes": 10,
+    "servings": 2,
+    "ingredients": [
+      {"name": "certified gluten-free oats", "quantity": 100, "unit": "g"},
+      {"name": "plant milk", "quantity": 250, "unit": "mL"},
+      {"name": "chia seeds", "quantity": 20, "unit": "g"},
+      {"name": "berries", "quantity": 150, "unit": "g"},
+      {"name": "maple syrup", "quantity": 20, "unit": "mL"}
+    ],
+    "steps": ["Combine oats, milk, chia seeds, and maple syrup.", "Refrigerate overnight.", "Top with berries before serving."],
+    "tags": ["breakfast", "meal-prep", "no-cook"]
+  },
+  {
+    "name": "Sheet-Pan Salmon and Vegetables",
+    "cuisine": "North American",
+    "diets": ["gluten-free"],
+    "time_minutes": 35,
+    "servings": 4,
+    "ingredients": [
+      {"name": "salmon fillets", "quantity": 600, "unit": "g"},
+      {"name": "baby potatoes", "quantity": 600, "unit": "g"},
+      {"name": "green beans", "quantity": 350, "unit": "g"},
+      {"name": "lemon", "quantity": 1, "unit": "item"},
+      {"name": "olive oil", "quantity": 45, "unit": "mL"}
+    ],
+    "steps": ["Roast halved potatoes for 15 minutes at 220 C.", "Add salmon and green beans with oil and seasoning.", "Roast until the salmon is cooked and vegetables are tender."],
+    "tags": ["sheet-pan", "weeknight", "fish"]
+  },
+  {
+    "name": "Chicken Noodle Soup",
+    "cuisine": "North American",
+    "diets": [],
+    "time_minutes": 50,
+    "servings": 6,
+    "ingredients": [
+      {"name": "chicken breast", "quantity": 500, "unit": "g"},
+      {"name": "egg noodles", "quantity": 250, "unit": "g"},
+      {"name": "carrots", "quantity": 250, "unit": "g"},
+      {"name": "celery", "quantity": 150, "unit": "g"},
+      {"name": "chicken stock", "quantity": 1800, "unit": "mL"}
+    ],
+    "steps": ["Simmer chicken in stock until cooked, then shred it.", "Cook carrots and celery in the stock.", "Add noodles and chicken; simmer until noodles are tender."],
+    "tags": ["soup", "comforting", "family"]
+  },
+  {
+    "name": "Quinoa Stuffed Peppers",
+    "cuisine": "Mediterranean-inspired",
+    "diets": ["vegan", "vegetarian", "gluten-free"],
+    "time_minutes": 55,
+    "servings": 4,
+    "ingredients": [
+      {"name": "bell peppers", "quantity": 4, "unit": "item"},
+      {"name": "quinoa", "quantity": 200, "unit": "g"},
+      {"name": "chickpeas", "quantity": 240, "unit": "g"},
+      {"name": "diced tomatoes", "quantity": 300, "unit": "g"},
+      {"name": "fresh parsley", "quantity": 20, "unit": "g"}
+    ],
+    "steps": ["Cook the quinoa.", "Mix quinoa with chickpeas, tomatoes, parsley, and seasoning.", "Fill halved peppers and bake at 200 C until tender."],
+    "tags": ["baked", "meal-prep", "high-fibre"]
+  }
+]
+

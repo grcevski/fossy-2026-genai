@@ -1,0 +1,153 @@
+[
+  {
+    "name": "Banff",
+    "country": "Canada",
+    "climate": "alpine",
+    "interests": ["hiking", "wildlife", "photography", "skiing"],
+    "best_months": ["June", "July", "August", "September", "January", "February"],
+    "daily_cost_cad": {"lodging": 190, "food": 70, "local_transport": 25, "activities": 55},
+    "highlights": ["Lake Louise", "Banff Gondola", "Bow Valley trails"],
+    "summary": "Rocky Mountain scenery with accessible trails, lakes, and winter sports."
+  },
+  {
+    "name": "Quebec City",
+    "country": "Canada",
+    "climate": "continental",
+    "interests": ["history", "food", "architecture", "museums"],
+    "best_months": ["May", "June", "September", "October", "December", "February"],
+    "daily_cost_cad": {"lodging": 155, "food": 75, "local_transport": 15, "activities": 35},
+    "highlights": ["Old Quebec", "Montmorency Falls", "Petit-Champlain"],
+    "summary": "A compact historic city with fortified streets and a strong food culture."
+  },
+  {
+    "name": "Lisbon",
+    "country": "Portugal",
+    "climate": "Mediterranean",
+    "interests": ["food", "history", "architecture", "nightlife"],
+    "best_months": ["April", "May", "June", "September", "October"],
+    "daily_cost_cad": {"lodging": 145, "food": 65, "local_transport": 15, "activities": 30},
+    "highlights": ["Alfama", "Belem", "Sintra day trip"],
+    "summary": "Hilly historic neighbourhoods, Atlantic viewpoints, and easy regional day trips."
+  },
+  {
+    "name": "Kyoto",
+    "country": "Japan",
+    "climate": "temperate",
+    "interests": ["history", "temples", "food", "gardens"],
+    "best_months": ["March", "April", "May", "October", "November"],
+    "daily_cost_cad": {"lodging": 140, "food": 60, "local_transport": 18, "activities": 28},
+    "highlights": ["Fushimi Inari", "Arashiyama", "Philosopher's Path"],
+    "summary": "Temple districts, traditional gardens, and seasonal walking routes."
+  },
+  {
+    "name": "Reykjavik",
+    "country": "Iceland",
+    "climate": "subpolar oceanic",
+    "interests": ["nature", "photography", "hot springs", "road trips"],
+    "best_months": ["June", "July", "August", "September", "February", "March"],
+    "daily_cost_cad": {"lodging": 220, "food": 100, "local_transport": 45, "activities": 95},
+    "highlights": ["Golden Circle", "Sky Lagoon", "South Coast"],
+    "summary": "A compact base for geothermal bathing and dramatic volcanic landscapes."
+  },
+  {
+    "name": "Mexico City",
+    "country": "Mexico",
+    "climate": "subtropical highland",
+    "interests": ["food", "museums", "history", "art"],
+    "best_months": ["February", "March", "April", "October", "November"],
+    "daily_cost_cad": {"lodging": 105, "food": 45, "local_transport": 12, "activities": 25},
+    "highlights": ["Anthropology Museum", "Coyoacan", "Teotihuacan"],
+    "summary": "Dense neighbourhoods with major museums, markets, and celebrated regional cuisine."
+  },
+  {
+    "name": "Edinburgh",
+    "country": "United Kingdom",
+    "climate": "cool oceanic",
+    "interests": ["history", "literature", "architecture", "hiking"],
+    "best_months": ["May", "June", "September", "October"],
+    "daily_cost_cad": {"lodging": 180, "food": 75, "local_transport": 18, "activities": 38},
+    "highlights": ["Edinburgh Castle", "Arthur's Seat", "Dean Village"],
+    "summary": "A walkable literary city framed by volcanic hills and medieval streets."
+  },
+  {
+    "name": "Marrakesh",
+    "country": "Morocco",
+    "climate": "semi-arid",
+    "interests": ["markets", "food", "architecture", "gardens"],
+    "best_months": ["March", "April", "May", "October", "November"],
+    "daily_cost_cad": {"lodging": 95, "food": 42, "local_transport": 12, "activities": 30},
+    "highlights": ["Medina", "Jardin Majorelle", "Atlas Mountains day trip"],
+    "summary": "Courtyard architecture, lively markets, gardens, and mountain access."
+  },
+  {
+    "name": "Costa Rica Central Pacific",
+    "country": "Costa Rica",
+    "climate": "tropical",
+    "interests": ["wildlife", "beaches", "hiking", "surfing"],
+    "best_months": ["January", "February", "March", "April", "December"],
+    "daily_cost_cad": {"lodging": 130, "food": 55, "local_transport": 35, "activities": 65},
+    "highlights": ["Manuel Antonio", "cloud forests", "Pacific beaches"],
+    "summary": "Rainforest wildlife, warm beaches, and guided outdoor activities."
+  },
+  {
+    "name": "Prague",
+    "country": "Czechia",
+    "climate": "continental",
+    "interests": ["history", "architecture", "music", "food"],
+    "best_months": ["April", "May", "September", "October", "December"],
+    "daily_cost_cad": {"lodging": 125, "food": 52, "local_transport": 12, "activities": 28},
+    "highlights": ["Charles Bridge", "Prague Castle", "Old Town Square"],
+    "summary": "Historic streets, concert halls, and an efficient tram network."
+  },
+  {
+    "name": "Cape Town",
+    "country": "South Africa",
+    "climate": "Mediterranean",
+    "interests": ["hiking", "food", "beaches", "wildlife"],
+    "best_months": ["January", "February", "March", "November", "December"],
+    "daily_cost_cad": {"lodging": 135, "food": 58, "local_transport": 32, "activities": 55},
+    "highlights": ["Table Mountain", "Cape Peninsula", "Kirstenbosch"],
+    "summary": "Mountain trails, coastal drives, gardens, and varied neighbourhood dining."
+  },
+  {
+    "name": "Seoul",
+    "country": "South Korea",
+    "climate": "continental",
+    "interests": ["food", "nightlife", "history", "shopping"],
+    "best_months": ["April", "May", "September", "October"],
+    "daily_cost_cad": {"lodging": 125, "food": 48, "local_transport": 12, "activities": 30},
+    "highlights": ["Gyeongbokgung", "Bukhansan", "Gwangjang Market"],
+    "summary": "Fast-paced city life alongside palace districts and nearby mountain trails."
+  },
+  {
+    "name": "New Zealand South Island",
+    "country": "New Zealand",
+    "climate": "temperate oceanic",
+    "interests": ["hiking", "road trips", "photography", "adventure"],
+    "best_months": ["January", "February", "March", "November", "December"],
+    "daily_cost_cad": {"lodging": 160, "food": 70, "local_transport": 60, "activities": 75},
+    "highlights": ["Milford Sound", "Aoraki", "Queenstown"],
+    "summary": "Long scenic routes connecting alpine walks, lakes, and coastal landscapes."
+  },
+  {
+    "name": "Athens",
+    "country": "Greece",
+    "climate": "Mediterranean",
+    "interests": ["history", "food", "museums", "islands"],
+    "best_months": ["April", "May", "June", "September", "October"],
+    "daily_cost_cad": {"lodging": 130, "food": 58, "local_transport": 14, "activities": 32},
+    "highlights": ["Acropolis", "Ancient Agora", "Saronic Gulf day trip"],
+    "summary": "Ancient sites, neighbourhood tavernas, and straightforward island connections."
+  },
+  {
+    "name": "Buenos Aires",
+    "country": "Argentina",
+    "climate": "humid subtropical",
+    "interests": ["food", "dance", "architecture", "nightlife"],
+    "best_months": ["March", "April", "May", "September", "October", "November"],
+    "daily_cost_cad": {"lodging": 100, "food": 50, "local_transport": 10, "activities": 28},
+    "highlights": ["San Telmo", "Recoleta", "Palermo"],
+    "summary": "Grand avenues, late-night dining, independent arts, and tango culture."
+  }
+]
+

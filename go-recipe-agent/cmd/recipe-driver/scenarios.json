@@ -1,0 +1,60 @@
+[
+  {
+    "name": "fast-pantry-dinner",
+    "prompts": [
+      "I have chickpeas, tomatoes, onion, and rice. Find a dinner under 40 minutes.",
+      "Scale the best option for six people and explain the order of work."
+    ]
+  },
+  {
+    "name": "vegetarian-weeknight",
+    "prompts": [
+      "Suggest a vegetarian meal that takes no more than 35 minutes.",
+      "Make it for two and suggest one sensible substitution."
+    ]
+  },
+  {
+    "name": "italian-family",
+    "prompts": [
+      "Find an Italian recipe for a family dinner with tomato and pasta.",
+      "Scale it to eight servings."
+    ]
+  },
+  {
+    "name": "vegan-quick",
+    "prompts": [
+      "What vegan recipe can I make in 30 minutes or less?",
+      "I have tofu and broccoli; which result uses them best?",
+      "Scale that recipe for three people."
+    ]
+  },
+  {
+    "name": "gluten-free",
+    "prompts": [
+      "Find a gluten-free dinner with beans or lentils.",
+      "Give me the metric ingredients for five servings and remind me what labels to check."
+    ]
+  },
+  {
+    "name": "breakfast",
+    "prompts": [
+      "Suggest a simple breakfast using oats or eggs in under 20 minutes.",
+      "Scale the best match for four people."
+    ]
+  },
+  {
+    "name": "comfort-food",
+    "prompts": [
+      "Find a comforting recipe for a cool evening, preferably soup or stew.",
+      "I need enough for six with leftovers; scale it to eight servings."
+    ]
+  },
+  {
+    "name": "mexican-inspired",
+    "prompts": [
+      "I have black beans, corn, lime, and tortillas. Search for a matching meal.",
+      "How should I prepare it for five people?"
+    ]
+  }
+]
+

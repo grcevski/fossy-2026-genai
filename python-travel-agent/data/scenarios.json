@@ -1,0 +1,60 @@
+[
+  {
+    "name": "autumn-food-trip",
+    "prompts": [
+      "Suggest a food-focused destination for two people in October under CAD 250 per person per day.",
+      "Estimate five days there, with CAD 1200 total for round-trip transportation.",
+      "Turn that into a relaxed day-by-day outline."
+    ]
+  },
+  {
+    "name": "summer-hiking",
+    "prompts": [
+      "Where should I go hiking in July if I also enjoy photography?",
+      "Compare the two strongest options and keep ground costs in mind."
+    ]
+  },
+  {
+    "name": "history-week",
+    "prompts": [
+      "Find a history and architecture destination for a solo trip in May under CAD 230 per day.",
+      "What would seven days cost before flights?"
+    ]
+  },
+  {
+    "name": "winter-nature",
+    "prompts": [
+      "I want a nature trip in February with memorable photography. What fits the catalog?",
+      "Plan four days for two travellers and estimate the ground costs."
+    ]
+  },
+  {
+    "name": "tropical-break",
+    "prompts": [
+      "Recommend a tropical December escape with beaches and wildlife.",
+      "Give me a six-day outline with one low-key day."
+    ]
+  },
+  {
+    "name": "city-culture",
+    "prompts": [
+      "Choose a September city trip built around museums, food, and walkable neighbourhoods.",
+      "Estimate three days for one person, excluding the trip there."
+    ]
+  },
+  {
+    "name": "budget-spring",
+    "prompts": [
+      "Find me a spring destination below CAD 200 per person per day with good local food.",
+      "Which highlights would fit into four days?"
+    ]
+  },
+  {
+    "name": "road-trip",
+    "prompts": [
+      "Suggest a November destination suited to road trips and dramatic scenery.",
+      "Estimate eight days for two people plus CAD 2400 in transportation.",
+      "How could we pace the itinerary to avoid moving every day?"
+    ]
+  }
+]

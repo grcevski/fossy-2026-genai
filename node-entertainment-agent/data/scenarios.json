@@ -1,0 +1,59 @@
+[
+  {
+    "name": "short-mystery",
+    "prompts": [
+      "Recommend a mystery movie I can finish in under two and a half hours.",
+      "Tell me more about the strongest match and why it works for a quiet evening."
+    ]
+  },
+  {
+    "name": "hopeful-book",
+    "prompts": [
+      "Find me a hopeful science-fiction book that is not an enormous time commitment.",
+      "Compare the top two choices without spoilers."
+    ]
+  },
+  {
+    "name": "family-animation",
+    "prompts": [
+      "Suggest an uplifting animated movie for a family night.",
+      "Get the details for your first choice and offer one backup."
+    ]
+  },
+  {
+    "name": "thoughtful-show",
+    "prompts": [
+      "I want a thoughtful drama show, preferably from 2015 or later.",
+      "Which recommendation has the smallest initial time commitment?"
+    ]
+  },
+  {
+    "name": "cozy-reading",
+    "prompts": [
+      "Find a cozy or funny book for a weekend.",
+      "Give me more detail about the best fit."
+    ]
+  },
+  {
+    "name": "tense-film",
+    "prompts": [
+      "Recommend a tense thriller movie from 2000 or later.",
+      "Compare two options by mood and length."
+    ]
+  },
+  {
+    "name": "big-ideas",
+    "prompts": [
+      "Suggest a book or movie with big philosophical ideas but an accessible story.",
+      "I only have about three hours right now, so narrow it down."
+    ]
+  },
+  {
+    "name": "comedy-show",
+    "prompts": [
+      "Find a funny, warm show that is easy to sample.",
+      "Tell me about the best match without claiming where it streams."
+    ]
+  }
+]
+
