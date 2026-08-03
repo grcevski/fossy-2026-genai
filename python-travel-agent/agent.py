@@ -6,6 +6,7 @@ import json
 import urllib.error
 import urllib.request
 from collections.abc import Callable
+from time import monotonic
 from typing import Any
 
 from config import AgentConfig
@@ -30,11 +31,17 @@ class OllamaError(RuntimeError):
     pass
 
 
+class OllamaTimeoutError(OllamaError):
+    pass
+
+
 class OllamaClient:
     def __init__(self, config: AgentConfig) -> None:
         self.config = config
 
-    def chat(self, messages: list[dict[str, Any]]) -> dict[str, Any]:
+    def chat(
+        self, messages: list[dict[str, Any]], deadline: float | None = None
+    ) -> dict[str, Any]:
         payload = {
             "model": self.config.model,
             "messages": messages,
@@ -49,13 +56,22 @@ class OllamaClient:
             headers={"Content-Type": "application/json"},
             method="POST",
         )
+        timeout = self.config.timeout
+        if deadline is not None:
+            timeout = min(timeout, deadline - monotonic())
+            if timeout <= 0:
+                raise OllamaTimeoutError("request deadline exceeded")
         try:
-            with urllib.request.urlopen(request, timeout=self.config.timeout) as response:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
                 body = response.read().decode("utf-8")
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode("utf-8", errors="replace")
             raise OllamaError(f"Ollama returned HTTP {exc.code}: {detail}") from exc
-        except (urllib.error.URLError, TimeoutError) as exc:
+        except TimeoutError as exc:
+            raise OllamaTimeoutError("Ollama request timed out") from exc
+        except urllib.error.URLError as exc:
+            if isinstance(exc.reason, TimeoutError):
+                raise OllamaTimeoutError("Ollama request timed out") from exc
             raise OllamaError(f"cannot reach Ollama: {exc}") from exc
         try:
             result = json.loads(body)
@@ -76,14 +92,19 @@ class TravelAgent:
     def reset(self) -> None:
         self.turns.clear()
 
-    def ask(self, user_text: str, on_tool: ToolCallback | None = None) -> str:
+    def ask(
+        self,
+        user_text: str,
+        on_tool: ToolCallback | None = None,
+        deadline: float | None = None,
+    ) -> str:
         current: list[dict[str, Any]] = [{"role": "user", "content": user_text}]
 
         for _ in range(MAX_TOOL_ROUNDS):
             messages = [{"role": "system", "content": SYSTEM_PROMPT}]
             messages.extend(message for turn in self.turns for message in turn)
             messages.extend(current)
-            response = self.client.chat(messages)
+            response = self.client.chat(messages, deadline)
             assistant = _assistant_message(response)
             current.append(assistant)
 
@@ -144,4 +165,3 @@ def _parse_tool_call(call: Any) -> tuple[str, dict[str, Any]]:
     if not isinstance(arguments, dict):
         return name, {"_invalid_arguments": arguments}
     return name, arguments
-

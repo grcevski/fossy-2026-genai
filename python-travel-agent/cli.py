@@ -9,7 +9,7 @@ import os
 import sys
 
 from agent import OllamaError, TravelAgent
-from config import add_agent_arguments, configs_from_args
+from config import add_agent_arguments, agent_config_from_args
 from tools import summarize_result
 
 
@@ -17,7 +17,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Interactive offline travel agent")
     add_agent_arguments(parser)
     try:
-        agent_config, _ = configs_from_args(parser.parse_args())
+        agent_config = agent_config_from_args(parser.parse_args())
     except ValueError as exc:
         parser.error(str(exc))
 
@@ -59,4 +59,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

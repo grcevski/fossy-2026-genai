@@ -7,6 +7,10 @@
     "node": ">=22"
   },
   "scripts": {
-    "agent": "node src/cli.js"
+    "agent": "node src/cli.js",
+    "server": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "5.2.1"
   }
 }

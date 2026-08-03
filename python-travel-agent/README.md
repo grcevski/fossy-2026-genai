@@ -5,11 +5,4 @@ An interactive, multi-turn travel planner backed by a static destination catalog
 - `search_destinations` filters by climate, interests, month, and daily CAD budget.
 - `estimate_trip_cost` calculates an illustrative party total in CAD.
 
-Run from the repository root:
-
-```sh
-make travel
-make drive-travel
-```
-
-The interactive agent remains Python. `make drive-travel` compiles the Go workload driver to `python-travel-agent/bin/travel-driver` and launches it. Run that binary with `--help` for all options. It embeds `data/scenarios.json` and the destination catalog, creates fresh short sessions, retries transient Ollama failures, and runs until interrupted unless `--max-sessions` is supplied.
+The interactive agent and FastAPI service both reuse the same agent core and local tools. From the repository root, use `make travel` for the CLI or `make serve-travel` for the service. Python dependencies are installed into `python-travel-agent/.venv` by `make install`.

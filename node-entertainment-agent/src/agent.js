@@ -12,6 +12,7 @@ const maxToolRounds = 5;
 const maxHistoryTurns = 10;
 
 export class OllamaError extends Error {}
+export class OllamaTimeoutError extends OllamaError {}
 
 export class EntertainmentAgent {
   constructor(config) {
@@ -23,7 +24,7 @@ export class EntertainmentAgent {
     this.turns = [];
   }
 
-  async ask(userText, onTool = null) {
+  async ask(userText, onTool = null, deadline = null) {
     const current = [{ role: "user", content: userText }];
     for (let round = 0; round < maxToolRounds; round += 1) {
       const messages = [
@@ -31,7 +32,7 @@ export class EntertainmentAgent {
         ...this.turns.flat(),
         ...current,
       ];
-      const response = await this.#chat(messages);
+      const response = await this.#chat(messages, deadline);
       const assistant = {
         role: "assistant",
         content: response.content ?? "",
@@ -67,9 +68,13 @@ export class EntertainmentAgent {
     this.turns = this.turns.slice(-maxHistoryTurns);
   }
 
-  async #chat(messages) {
+  async #chat(messages, deadline) {
+    const remaining = deadline === null
+      ? this.config.timeout * 1000
+      : Math.min(this.config.timeout * 1000, deadline - Date.now());
+    if (remaining <= 0) throw new OllamaTimeoutError("request deadline exceeded");
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), this.config.timeout * 1000);
+    const timeout = setTimeout(() => controller.abort(), remaining);
     let response;
     try {
       response = await fetch(`${this.config.ollamaHost}/api/chat`, {
@@ -87,6 +92,7 @@ export class EntertainmentAgent {
       });
     } catch (error) {
       const reason = error.name === "AbortError" ? "request timed out" : error.message;
+      if (error.name === "AbortError") throw new OllamaTimeoutError(reason);
       throw new OllamaError(`cannot reach Ollama: ${reason}`);
     } finally {
       clearTimeout(timeout);
@@ -124,4 +130,3 @@ function parseToolCall(call) {
     arguments: args && typeof args === "object" && !Array.isArray(args) ? args : {},
   };
 }
-

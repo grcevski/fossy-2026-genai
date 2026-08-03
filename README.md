@@ -8,7 +8,7 @@ This repository contains three deliberately small, standalone tool-using agents:
 | Recipe helper | Go | Search recipes, scale metric ingredients |
 | Entertainment guide | Node.js | Search titles, retrieve title details |
 
-Every agent talks directly to Ollama's `/api/chat` endpoint with the language's standard HTTP library. There are no SDKs, external APIs, shared runtime packages, or third-party dependencies. The bundled catalogs are static demo data, not current professional advice.
+Each agent provides an interactive CLI and an HTTP service backed by the local Ollama `/api/chat` endpoint. The bundled catalogs are static demo data, not current professional advice.
 
 ## Requirements
 
@@ -16,6 +16,7 @@ Every agent talks directly to Ollama's `/api/chat` endpoint with the language's 
 - Python 3.11+
 - Go 1.22+
 - Node.js 22+
+- k6 for workload generation
 - Make (optional)
 
 Start Ollama and pull the model if needed:
@@ -23,6 +24,12 @@ Start Ollama and pull the model if needed:
 ```sh
 ollama serve
 ollama pull qwen3:8b
+```
+
+Install FastAPI/Uvicorn and Express, then build the Go programs:
+
+```sh
+make all
 ```
 
 ## Interactive agents
@@ -33,40 +40,45 @@ make recipe
 make entertainment
 ```
 
-Each CLI supports `/help`, `/reset`, and `/quit`. Tool names, arguments, and compact result summaries are printed as the agent works.
+Each CLI supports `/help`, `/reset`, and `/quit`.
 
-## Workload drivers
+## HTTP services
 
-All workload drivers are compiled Go programs. Each target builds its binary under the corresponding agent's `bin/` directory, then repeatedly creates short independent user sessions until interrupted:
+Run services individually or together:
 
 ```sh
-make drive-travel
-make drive-recipe
-make drive-entertainment
-make drive-all
+make serve-travel
+make serve-recipe
+make serve-entertainment
+make serve-all
 ```
 
-Press `Ctrl-C` to stop. A driver finishes its current request and prints totals. Use `--help` on an individual driver for its flags.
+`make run-all` is an alias for `make serve-all`. Services bind to `0.0.0.0` on ports `8081`, `8082`, and `8083` by default. Stop them with `Ctrl-C`.
 
-## Configuration
+## Workload
 
-Flags override environment variables. All agents recognize:
+With the services running in another terminal:
+
+```sh
+make load
+```
+
+The k6 workload defaults to one virtual user per service for one minute, with a random 2–8 second pause between simulations. Configure it with `VUS`, `DURATION`, `MIN_DELAY`, `MAX_DELAY`, the role-specific `*_VUS` and `*_DURATION` variables, or `TRAVEL_URL`, `RECIPE_URL`, and `ENTERTAINMENT_URL`.
+
+## Service configuration
 
 | Environment variable | Default | Purpose |
 | --- | --- | --- |
 | `OLLAMA_HOST` | `http://localhost:11434` | Ollama base URL |
 | `OLLAMA_MODEL` | `qwen3:8b` | Chat model |
-| `OLLAMA_TIMEOUT` | `120` | HTTP timeout in seconds |
+| `OLLAMA_TIMEOUT` | `120` | Per-call Ollama timeout in seconds |
 | `OLLAMA_TEMPERATURE` | `0.3` | Sampling temperature |
+| `HTTP_HOST` | `0.0.0.0` | Service bind address |
+| `HTTP_PORT` | role-specific | Service port |
+| `SESSION_TTL` | `1800` | Idle session expiry in seconds |
+| `MAX_SESSIONS` | `100` | In-memory session cap |
+| `MAX_CONCURRENT_REQUESTS` | `4` | Concurrent Ollama-backed requests |
+| `CHAT_TIMEOUT` | `300` | Overall chat deadline in seconds |
+| `SIMULATE_TIMEOUT` | `900` | Overall simulation deadline in seconds |
 
-Workload drivers also recognize:
-
-| Environment variable | Default | Purpose |
-| --- | --- | --- |
-| `WORKERS` | `1` | Concurrent simulated users |
-| `MIN_DELAY` / `MAX_DELAY` | `2` / `8` | Seconds between prompts |
-| `SESSION_MIN_DELAY` / `SESSION_MAX_DELAY` | `5` / `15` | Seconds between sessions |
-| `RANDOM_SEED` | random | Repeatable scenario selection |
-| `MAX_SESSIONS` | unlimited | Stop after this many sessions |
-
-Set `NO_COLOR` to disable interactive ANSI colors.
+The services have no authentication and are reachable from the network when bound to `0.0.0.0`.

@@ -19,7 +19,7 @@ func main() {
 	}
 	recipeagent.BindAgentFlags(flag.CommandLine, &config)
 	flag.Parse()
-	if err := recipeagent.ValidateConfig(config, nil); err != nil {
+	if err := recipeagent.ValidateConfig(config); err != nil {
 		fatal(err)
 	}
 	agent, err := recipeagent.NewAgent(config)
