@@ -2,7 +2,7 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 const sharedVus = integerEnvironment("VUS", 1);
-const sharedDuration = __ENV.DURATION || "2m";
+const sharedDuration = __ENV.DURATION || "15m";
 const minimumDelay = numberEnvironment("MIN_DELAY", 15);
 const maximumDelay = numberEnvironment("MAX_DELAY", 30);
 

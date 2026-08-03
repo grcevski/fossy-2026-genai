@@ -1,0 +1,1 @@
+sudo bin/obi --config=./config.yaml

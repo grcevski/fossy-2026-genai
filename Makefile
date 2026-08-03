@@ -46,14 +46,14 @@ serve-travel: install-python
 	cd python-travel-agent && HTTP_HOST=$(HTTP_HOST) HTTP_PORT=$(TRAVEL_HTTP_PORT) .venv/bin/python server.py
 
 serve-recipe: build-recipe-server
-	HTTP_HOST=$(HTTP_HOST) HTTP_PORT=$(RECIPE_HTTP_PORT) ./$(RECIPE_SERVER_BINARY)
+	HTTP_HOST=$(HTTP_HOST) HTTP_PORT=$(RECIPE_HTTP_PORT) OLLAMA_MODEL="mistral:latest" ./$(RECIPE_SERVER_BINARY)
 
 serve-entertainment: install-node
 	cd node-entertainment-agent && HTTP_HOST=$(HTTP_HOST) HTTP_PORT=$(ENTERTAINMENT_HTTP_PORT) $(NODE) src/server.js
 
 serve-all: install build-recipe-server
 	@(cd python-travel-agent && HTTP_HOST=$(HTTP_HOST) HTTP_PORT=$(TRAVEL_HTTP_PORT) .venv/bin/python server.py) & travel_pid=$$!; \
-	HTTP_HOST=$(HTTP_HOST) HTTP_PORT=$(RECIPE_HTTP_PORT) ./$(RECIPE_SERVER_BINARY) & recipe_pid=$$!; \
+	HTTP_HOST=$(HTTP_HOST) HTTP_PORT=$(RECIPE_HTTP_PORT) OLLAMA_MODEL="mistral:latest" ./$(RECIPE_SERVER_BINARY) & recipe_pid=$$!; \
 	(cd node-entertainment-agent && HTTP_HOST=$(HTTP_HOST) HTTP_PORT=$(ENTERTAINMENT_HTTP_PORT) $(NODE) src/server.js) & entertainment_pid=$$!; \
 	trap 'kill $$travel_pid $$recipe_pid $$entertainment_pid 2>/dev/null || true' INT TERM EXIT; \
 	wait

@@ -2,17 +2,17 @@
 
 This repository contains three deliberately small, standalone tool-using agents:
 
-| Agent | Language | Local tools |
-| --- | --- | --- |
-| Travel planner | Python | Search destinations, estimate trip cost in CAD |
-| Recipe helper | Go | Search recipes, scale metric ingredients |
-| Entertainment guide | Node.js | Search titles, retrieve title details |
+| Agent | Language | Local tools | Model
+| --- | --- | --- | --- |
+| Travel planner | Python | Search destinations, estimate trip cost in CAD | qwen:3b
+| Recipe helper | Go | Search recipes, scale metric ingredients | mistral:latest
+| Entertainment guide | Node.js | Search titles, retrieve title details | qwen:3b
 
 Each agent provides an interactive CLI and an HTTP service backed by the local Ollama `/api/chat` endpoint. The bundled catalogs are static demo data, not current professional advice.
 
 ## Requirements
 
-- Ollama with `qwen3:8b` installed
+- Ollama with `qwen3:8b` and `mistral:latest` installed
 - Python 3.11+
 - Go 1.22+
 - Node.js 22+
@@ -24,6 +24,7 @@ Start Ollama and pull the model if needed:
 ```sh
 ollama serve
 ollama pull qwen3:8b
+ollama pull mistral:latest
 ```
 
 Install FastAPI/Uvicorn and Express, then build the Go programs:
@@ -44,12 +45,17 @@ Each CLI supports `/help`, `/reset`, and `/quit`.
 
 ## HTTP services
 
-Run services individually or together:
+Run services individually:
 
 ```sh
 make serve-travel
 make serve-recipe
 make serve-entertainment
+```
+
+Or together:
+
+```sh
 make serve-all
 ```
 
@@ -82,3 +88,20 @@ The k6 workload defaults to one virtual user per service for one minute, with a 
 | `SIMULATE_TIMEOUT` | `900` | Overall simulation deadline in seconds |
 
 The services have no authentication and are reachable from the network when bound to `0.0.0.0`.
+
+# Running local observability stack
+
+The easiest way to get started is by getting an OSS local observability stack like the Grafana LGTM (Loki = Logs, Grafana = UI, Tempo = Traces, Mimir = Metrics) stack. There's a packaged version of these products configured together with the OpenTelemetry Collector, as a single [Docker image](https://github.com/grafana/docker-otel-lgtm).
+
+Easiest way to run it is by running the following commands:
+```sh
+git checkout git@github.com:grafana/docker-otel-lgtm.git
+cd docker-otel-lgtm
+./run-lgtm.sh
+```
+
+The Grafana instance shipped in this image contains a few dashboards, for example RED (Request/Error/Duration) metrics. I've included an additional sample dashboard in the [dashboards](./dashboards/) folder that is specifically designed for the OpenTelemetry GenAI metrics. Once you launch the LGTM stack, you can import this dashboard JSON file into your Grafana dashboards.
+
+# Capturing Telemetry with OpenTelemetry eBPF Instrumentation
+
+In the [obi](./obi/) folder I've included the sample configuration (and a run script) I used to instrument the three services built here. The script shows how to enable various features in [OpenTelemetry eBPF Instrumentation](https://github.com/open-telemetry/opentelemetry-ebpf-instrumentation) to successfully capture GenAI signals.

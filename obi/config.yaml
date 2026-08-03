@@ -1,0 +1,46 @@
+otel_metrics_export:
+  endpoint: http://127.0.0.1:4318
+otel_traces_export:
+  endpoint: http://127.0.0.1:4318
+discovery:
+  instrument:
+    - namespace: genai-demo
+      name: travel-agent
+      open_ports: 8081
+    - namespace: genai-demo
+      name: recipe-agent
+      open_ports: 8082
+    - namespace: genai-demo
+      name: entertainment-agent
+      open_ports: 8083
+attributes:
+  select:
+    traces:
+      include: ["*"]
+ebpf:
+  buffer_sizes:
+    http: 65536
+  #protocol_debug_print: true
+  payload_extraction:
+    http:
+      enrichment:
+        enabled: true
+        policy:
+          default_action:
+            headers: include
+            body: include
+      genai:
+        ollama:
+          enabled: true
+        openai_compatible:
+          enabled: true
+        openai:
+          enabled: true
+        anthropic:
+          enabled: true
+        bedrock:
+          enabled: true
+trace_printer: text
+routes:
+  unmatched: low-cardinality
+  
